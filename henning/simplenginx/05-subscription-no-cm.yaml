@@ -1,0 +1,19 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Subscription
+metadata:
+  name: sample-nginx
+  namespace: hstgithub-project
+spec:
+  channel: hstgithubchannel/hstchannelgithub
+  path: simplenginx/deployables
+  placement:
+    placementRef:
+      name: samplenginx
+      kind: PlacementRule
+    local: false
+## following lines can be used to deploy to default namespace
+#  overrides:
+#  - clusterName: "/"
+#    clusterOverrides:
+#    - path: "metadata.namespace"
+#      value: default

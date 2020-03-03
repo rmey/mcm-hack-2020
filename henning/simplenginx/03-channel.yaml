@@ -1,0 +1,8 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Channel
+metadata:
+  name: hstchannelgithub
+  namespace: hstgithubchannel
+spec:
+    type: GitHub
+    pathname: https://github.com/hsternkicker/mcmchannel.git
