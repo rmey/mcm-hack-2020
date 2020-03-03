@@ -1,0 +1,8 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Channel
+metadata:
+  name: github-chan
+  namespace: githubchannel
+spec:
+    type: GitHub
+    pathname: https://github.com/rmey/mcm-hack-2020.git

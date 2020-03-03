@@ -1,0 +1,28 @@
+apiVersion: app.ibm.com/v1alpha1
+kind: Subscription
+metadata:
+  name: sample-nginx
+  namespace: hstgithub-project
+spec:
+  channel: hstgithubchannel/hstchannelgithub
+  placement:
+    placementRef:
+      name: samplenginx
+      kind: PlacementRule
+    local: false
+  overrides:
+  - clusterName: "/"
+    clusterOverrides:
+    - path: "metadata.namespace"
+      value: default
+  packageFilter:
+    filterRef:
+      name: hstresource-filter-configmap
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hstresource-filter-configmap
+  namespace: hstgithub-project
+data:
+    path: simplenginx/deployables
