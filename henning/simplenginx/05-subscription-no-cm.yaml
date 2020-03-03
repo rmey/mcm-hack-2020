@@ -2,10 +2,10 @@ apiVersion: app.ibm.com/v1alpha1
 kind: Subscription
 metadata:
   name: sample-nginx
-  namespace: hstgithub-project
+  namespace: github-project
 spec:
-  channel: hstgithubchannel/hstchannelgithub
-  path: simplenginx/deployables
+  channel: githubchannel/github-chan
+  path: henning/simplenginx/deployables
   placement:
     placementRef:
       name: samplenginx
